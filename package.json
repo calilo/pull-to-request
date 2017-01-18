@@ -1,0 +1,61 @@
+{
+  "name": "@sunzhao/pull-to-request",
+  "version": "1.0.0",
+  "description": "pull-to-request web wrapper for android and ios",
+  "main": "./lib",
+  "bin": {
+    "build-scss": "bin/build-scss.js"
+  },
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "npm run clean && cross-env NODE_ENV=production babel ./src --out-dir ./lib && npm run build:scss",
+    "build:scss": "build-scss -entry ./src/main.scss -paths ./src/ -out ./lib/ptr.css",
+    "start": "copyfiles -f ./example/index.html ./dist && webpack-dev-server --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calilo/pull-to-request.git"
+  },
+  "keywords": [
+    "pull-to-request"
+  ],
+  "author": "sunz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calilo/pull-to-request/issues"
+  },
+  "homepage": "https://github.com/calilo/pull-to-request#readme",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "mobile-detect": "^1.3.5"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^3.1.2",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-require-ignore": "0.0.2",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-standalone": "^6.21.1",
+    "copyfiles": "^1.0.0",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^4.3.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
