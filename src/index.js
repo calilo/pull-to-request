@@ -2,7 +2,6 @@
  * Created by sunz on 2017/1/18.
  */
 import PullTracker from './pull-tracker';
-import './main.scss';
 
 export default class PullToRequest {
   static registed = []

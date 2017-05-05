@@ -9,8 +9,8 @@
   "scripts": {
     "clean": "rimraf ./lib",
     "build": "npm run clean && cross-env NODE_ENV=production babel ./src --out-dir ./lib --copy-files && npm run build:scss",
-    "build:scss": "build-scss -entry ./src/main.scss -paths ./src/ -out ./lib/ptr.css",
-    "start": "copyfiles -f ./example/index.html ./dist && webpack-dev-server --hot",
+    "build:scss": "build-scss -entry ./src/main.scss -paths ./src/ -out ./lib/main.css",
+    "start": "npm run build:scss && copyfiles -f ./lib/main.css ./dist && copyfiles -f ./example/index.html ./dist && webpack-dev-server --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -50,7 +50,6 @@
     "copyfiles": "^1.0.0",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.3.0",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.1.1",

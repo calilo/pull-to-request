@@ -1,5 +1,3 @@
-import './_all.scss';
-
 export default class PullTracker {
   static registed = []
   dispose() {

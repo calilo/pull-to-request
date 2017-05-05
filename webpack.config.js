@@ -1,5 +1,4 @@
 var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './example/index.js',
@@ -25,19 +24,9 @@ module.exports = {
         presets: ['es2015', 'es2017', 'stage-2'],
         plugins: ['add-module-exports', 'istanbul', 'transform-class-properties', 'transform-require-ignore', 'transform-runtime']
       }
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract("css")
-    }, {
-      test: /\.sass$/,
-      loader: ExtractTextPlugin.extract("css!sass")
-    }, {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract("css!sass")
     }]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css"),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("development")
