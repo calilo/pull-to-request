@@ -1,4 +1,4 @@
-# pull-to-request
+# Pull To Refresh
 
 How to Run Example:
 1. npm link
