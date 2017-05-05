@@ -1,2 +1,9 @@
 # pull-to-request
-pull to request wrapper for android and iphone
+
+How to Run Example:
+1. npm link
+2. npm start
+
+How to Build:
+1. npm link
+2. npm run build
